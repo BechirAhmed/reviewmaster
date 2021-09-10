@@ -1,12 +1,16 @@
 # Review-Ratings: Laravel Package
-[![Latest Stable Version](https://poser.pugx.org/dgvai/laravel-user-review/v/stable)](https://packagist.org/packages/dgvai/laravel-user-review)
-[![Total Downloads](https://poser.pugx.org/dgvai/laravel-user-review/downloads)](https://packagist.org/packages/dgvai/laravel-user-review)
-[![Latest Unstable Version](https://poser.pugx.org/dgvai/laravel-user-review/v/unstable)](https://packagist.org/packages/dgvai/laravel-user-review)
-[![License](https://poser.pugx.org/dgvai/laravel-user-review/license)](https://packagist.org/packages/dgvai/laravel-user-review)
+[![Latest Stable Version](https://poser.pugx.org/beksos/reviewmaster/v/stable)](https://packagist.org/packages/beksos/reviewmaster)
+[![Total Downloads](https://poser.pugx.org/beksos/reviewmaster/downloads)](https://packagist.org/packages/beksos/reviewmaster)
+[![Latest Unstable Version](https://poser.pugx.org/beksos/reviewmaster/v/unstable)](https://packagist.org/packages/beksos/reviewmaster)
+[![License](https://poser.pugx.org/beksos/reviewmaster/license)](https://packagist.org/packages/beksos/reviewmaster)
 
-This package uses a trait for a model which can be reviewable by users and give starred/point ratings and only one reply can come from admin as a support response. (like Google playstore review system). This package can be used with any projects like Ecommerce, Shop, Store, etc models. 
 
-> Author: **Jalal Uddin** [Github](https://github.com/dgvai-git) | [Linked-in](https://linkedin.com/in/dgvai) | [Facebook](https://facebook.com/dgvai.hridoy)
+This package is a fork of the original package https://github.com/dgvai/laravel-user-review by **Jalal Uddin** [Github](https://github.com/dgvai-git), with some improvments.
+
+
+This package uses a trait for a model which can be reviewable by users (you can specify user model) and give starred/point ratings and only one reply can come from admin as a support response. (like Google playstore review system). This package can be used with any projects like Ecommerce, Shop, Store, etc models. 
+
+<!-- > Author: **Jalal Uddin** [Github](https://github.com/dgvai-git) | [Linked-in](https://linkedin.com/in/dgvai) | [Facebook](https://facebook.com/dgvai.hridoy) -->
 
 ## Requirements
 <ul>
@@ -17,12 +21,12 @@ This package uses a trait for a model which can be reviewable by users and give 
 ## Installation
 > using COMPOSER
 
-`` composer require dgvai/laravel-user-review``
+`` composer require beksos/reviewmaster``
 
 ## Configurations
 > Export the assets (migration and config)
 
-``php artisan vendor:publish --provider="DGvai\Review\ReviewerServiceProvider" ``
+``php artisan vendor:publish --provider="Beksos\Review\ReviewerServiceProvider" ``
 
 > Run the migration
 
@@ -34,12 +38,13 @@ This package uses a trait for a model which can be reviewable by users and give 
 
 ## Usage
 Add ``Reviewable`` trait to the model where you want users to give review and ratings. As example for **Product Model** 
+Specify the user model in the config/reviewmaster file, by default it uses User.
 
 ```php
 <?php 
 namespace App;
 
-use DGvai\Review\Reviewable;
+use Beksos\Review\Reviewable;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -115,15 +120,15 @@ class Product extends Model
     */
 
     // Get all reviews of all products
-    $reviews = DGvai\Review\Review::all();              // all reviews
-    $reviews = DGvai\Review\Review::active()->get();    // all active reviews
-    $reviews = DGvai\Review\Review::inactive()->get();  // all inactive reviews
-    $reviews = DGvai\Review\Review::daily()->get();     // all daily reviews
-    $reviews = DGvai\Review\Review::monthly()->get();   // all monthly reviews
-    $reviews = DGvai\Review\Review::yearly()->get();    // all yearly reviews
+    $reviews = Beksos\Review\Review::all();              // all reviews
+    $reviews = Beksos\Review\Review::active()->get();    // all active reviews
+    $reviews = Beksos\Review\Review::inactive()->get();  // all inactive reviews
+    $reviews = Beksos\Review\Review::daily()->get();     // all daily reviews
+    $reviews = Beksos\Review\Review::monthly()->get();   // all monthly reviews
+    $reviews = Beksos\Review\Review::yearly()->get();    // all yearly reviews
 
     // You can also chain these methods
-    $reviews = DGvai\Review\Review::monthly()->active()->get();  // get aa monthly active reviews
+    $reviews = Beksos\Review\Review::monthly()->active()->get();  // get aa monthly active reviews
 
     // Get reviews of a product
     $product->reviews();

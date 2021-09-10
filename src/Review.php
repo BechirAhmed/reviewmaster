@@ -1,5 +1,5 @@
 <?php
-namespace Beksos\ReviewMaster;
+namespace Beksos\Review;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;

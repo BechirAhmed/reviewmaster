@@ -1,5 +1,5 @@
 <?php
-namespace Beksos\ReviewMaster;
+namespace Beksos\Review;
 
 use Beksos\Review\Review;
 
