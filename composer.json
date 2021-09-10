@@ -1,0 +1,29 @@
+{
+    "name": "beksos/reviewmaster",
+    "description": "A Laravel Package for User Review on Models, like Product review for ecommerce systems.",
+    "type": "laravel-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bechir Ahmed",
+            "email": "BechirAhmed@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.2",
+        "laravel/framework": "^5.6|^6.0|^7.0|^8.40"
+    },
+    "autoload": {
+        "psr-4": {
+            "Beksos\\ReviewMaster\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Beksos\\ReviewMaster\\ReviewerServiceProvider"
+            ]
+        }
+    }
+}
