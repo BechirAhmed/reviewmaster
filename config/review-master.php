@@ -12,6 +12,18 @@
         */
 
         'star' => env('SYSTEM_RATING_STAR_COUNT', 5),
+        
+        /*
+        |--------------------------------------------------------------------------
+        | DEFAULT USER MODEL
+        |--------------------------------------------------------------------------
+        | By default this package uses USER model based rating system
+        | for your project.
+        | However, you can change it.
+        |
+        */
+
+        'model' => env('SYSTEM_RATING_USER_MODEL', App\Models\User::class),
 
         /*
         |--------------------------------------------------------------------------

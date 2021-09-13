@@ -18,7 +18,7 @@ class Review extends Model
 
     public function user()
     {
-        $userClassName = Config::get('auth.model');
+        $userClassName = Config::get('review-master.model');
         if (is_null($userClassName))
         {
             $userClassName = Config::get('auth.providers.users.model');
