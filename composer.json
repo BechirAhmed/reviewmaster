@@ -22,8 +22,16 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Beksos\\ReviewMaster\\ReviewerServiceProvider"
+                "Beksos\\Review\\ReviewerServiceProvider"
             ]
         }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ]
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.21"
     }
 }
