@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Beksos\\ReviewMaster\\": "src"
+            "Beksos\\Review\\": "src"
         }
     },
     "extra": {
